@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PostService } from '../services/post.service';
-import { Post } from '../models/post.model';
+import { PostService } from '../../services/post.service';
+import { Post } from '../../models/post.model';
 import { NzListModule } from 'ng-zorro-antd/list';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { LatestPostAlertComponent } from '../latest-post-alert/latest-post-alert.component';

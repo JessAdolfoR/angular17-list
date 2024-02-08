@@ -1,9 +1,9 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
-import { PostService } from '../services/post.service';
+import { PostService } from '../../services/post.service';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-import { Post } from '../models/post.model';
+import { Post } from '../../models/post.model';
 import { NzInputModule } from 'ng-zorro-antd/input';
 @Component({
   selector: 'app-create-post-form',
