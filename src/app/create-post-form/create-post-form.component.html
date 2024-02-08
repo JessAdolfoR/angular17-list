@@ -1,0 +1,19 @@
+<!-- create-post-form.component.html -->
+<form [formGroup]="postForm" (ngSubmit)="onSubmit()" nz-form nzLayout="vertical">
+  <h2>Create Post</h2>
+  <nz-form-item>
+    <nz-form-label [nzSpan]="4" nzFor="title">Title</nz-form-label>
+    <nz-form-control [nzSpan]="20" nzErrorTip="Max 15 characters">
+      <input nz-input formControlName="title" id="title" />
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label [nzSpan]="4" nzFor="body">Body</nz-form-label>
+    <nz-form-control [nzSpan]="20" nzErrorTip="Max 100 characters">
+      <textarea nz-input formControlName="body" id="body"></textarea>
+    </nz-form-control>
+  </nz-form-item>
+
+  <button nz-button nzType="primary" [nzLoading]="isLoading" [disabled]="!postForm.valid">Submit</button>
+</form>

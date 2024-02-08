@@ -1,0 +1,8 @@
+<!-- latest-post-alert.component.html -->
+@if(latestPost){
+    <div>
+        <nz-alert nzType="info" [nzMessage]="latestPost.title" [nzDescription]="latestPost.body">
+        </nz-alert>
+    </div>
+}
+

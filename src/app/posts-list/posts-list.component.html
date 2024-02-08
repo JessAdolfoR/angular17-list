@@ -1,0 +1,26 @@
+@if(posts && posts.length > 0){
+  <div nz-row>
+    <div nz-col nzSpan="24" [nzXs]="24" [nzSm]="24" [nzMd]="14">
+      <h2>First Post</h2>
+      <app-latest-post-alert [latestPost]="latestPost"></app-latest-post-alert>
+      <h2>List Posts</h2>
+      <nz-list nzGrid>
+        <div nz-row [nzGutter]="16">
+          @for(post of visiblePosts; track post.id){
+            <div nz-col [nzXXl]="12" [nzXl]="12" [nzLg]="12" [nzMd]="12" [nzSm]="12" [nzXs]="24">
+              <nz-list-item>
+                <nz-card [nzTitle]="post.title">{{post.body}}</nz-card>
+              </nz-list-item>
+            </div>
+          }
+        </div>
+      </nz-list>
+      <nz-pagination [(nzPageIndex)]="pageIndex" [nzTotal]="posts.length" [nzPageSize]="pageSize" (nzPageIndexChange)="onPageChange($event)"></nz-pagination>
+    </div>
+    <div nz-col [nzSpan]="24" [nzXs]="24" [nzSm]="24" [nzMd]="10">
+      <app-create-post-form (postCreated)="handleNewPost($event)"/>
+    </div>
+  </div>
+}@else {
+  <nz-skeleton></nz-skeleton>
+}
